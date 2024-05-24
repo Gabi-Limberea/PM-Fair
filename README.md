@@ -21,7 +21,9 @@ The project uses the following libraries:
 ## Code structure
 
 1. `adc.cpp/h` - contains the initialization function for the ADC and the definition
-   of the interrupt service routine that reads the ADC value and computes the max amplitude of the signal and its period.
+   of the interrupt service routine that reads the ADC value and computes the max amplitude of the signal and its period. The code is the same as in
+   [this instructable](https://www.instructables.com/Arduino-Frequency-Detection/),
+   with a few modifications to adapt it to the project.
 
 2. `tft.cpp/h` - contains the initialization function for the LCD display and the
    functions that write the text on the screen.
@@ -36,4 +38,7 @@ The project uses the following libraries:
    all the components are initialized and interrupts are enabled. In `loop()`, the
    program handles the output to the screen and the LED based on the computed frequency.
 
+## Sources
 
+-   [Arduino Frequency Detection](https://www.instructables.com/Arduino-Frequency-Detection/)
+-   [Arduino Audio Input](https://www.instructables.com/Arduino-Audio-Input/)
