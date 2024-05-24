@@ -16,7 +16,8 @@ The project uses the following libraries:
 -   `Arduino.h` - for the Serial communication
 -   `Adafruit_GFX.h` and `Adafruit_ST7735.h` - for the LCD display, instead of the
     default `TFT.h` library that is based on the Adafruit libraries and has been
-    deprecated
+    deprecated. It is specifically designed for the ST7735 display, which use
+    SPI communication.
 
 ## Code structure
 
