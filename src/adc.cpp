@@ -24,7 +24,6 @@ int slope[10];           // storage for slope of events
 unsigned int totalTimer; // used to calculate period
 unsigned int period;     // storage for period of wave
 byte index = 0;          // current storage index
-float frequency;         // storage for frequency calculations
 int maxSlope = 0;        // used to calculate max slope as trigger point
 int newSlope = 0;            // storage for incoming slope data
 

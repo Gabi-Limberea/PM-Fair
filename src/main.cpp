@@ -19,8 +19,6 @@
 #define NEXT_BUTTON 3
 
 // data storage variables
-byte newData = 0;
-byte prevData = 0;
 float frequency = 0;
 float reference_frequency = 0;
 
