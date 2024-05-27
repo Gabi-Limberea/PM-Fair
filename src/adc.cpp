@@ -36,8 +36,8 @@ int timerTol = 10; // timer tolerance- adjust this if you need
 // variables for amp detection
 unsigned int ampTimer = 0;
 byte maxAmp = 0;
-byte checkMaxAmp;
-byte ampThreshold = 30; // raise if you have a very noisy signal
+byte checkMaxAmp = 0;
+byte ampThreshold = 50; // raise if you have a very noisy signal
 
 void reset() {    // clea out some variables
     index = 0;    // reset index

@@ -38,14 +38,15 @@ void setup() {
     init_buttons();
 
     Serial.println("Setting up LEDs...");
-	init_led();
+    init_led();
 
-	Serial.println("Setting up ADC...");
+    Serial.println("Setting up ADC...");
     init_adc();
 
     sei();
 
     current_string = E;
+    prev_string = E;
     reference_frequency = 82.41;
 
     Serial.println("Setup complete!");
@@ -79,11 +80,18 @@ void loop() {
         break;
     }
 
+    if (current_string != prev_string) {
+        led_off();
+        prev_string = current_string;
+    }
+
     if (checkMaxAmp > ampThreshold) {
         frequency = 38462 / float(period);
-		led_compare_and_on(reference_frequency, frequency);
-    } else {
-        led_off();
+
+        if (frequency > 30.0 && frequency < 500.0) {
+            // Serial.println(frequency);
+            led_compare_and_on(reference_frequency, frequency);
+        }
     }
 
     delay(100);

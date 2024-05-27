@@ -1,5 +1,6 @@
 #include "buttons.h"
 
+uint8_t prev_string;
 uint8_t current_string;
 unsigned long last_interrupt_time = 0;
 
@@ -16,6 +17,7 @@ void init_buttons() {
 
 ISR(INT0_vect) {
     if (millis() - last_interrupt_time > 200) {
+		prev_string = current_string;
         current_string = (current_string + 5) % 6;
         last_interrupt_time = millis();
     }
@@ -23,6 +25,7 @@ ISR(INT0_vect) {
 
 ISR(INT1_vect) {
     if (millis() - last_interrupt_time > 200) {
+		prev_string = current_string;
         current_string = (current_string + 1) % 6;
         last_interrupt_time = millis();
     }
